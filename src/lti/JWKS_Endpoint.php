@@ -41,7 +41,7 @@ class JWKS_Endpoint {
                 'use' => 'sig',
                 'e' => JWT::urlsafeB64Encode($key->publicExponent->toBytes()),
                 'n' => JWT::urlsafeB64Encode($key->modulus->toBytes()),
-                'kid' => $kid,
+                'kid' => (string) $kid,
             );
             $jwks[] = $components;
         }
